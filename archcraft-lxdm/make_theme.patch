@@ -1,0 +1,36 @@
+--- data/Makefile.am
++++ data/Makefile.am
+@@ -31,19 +31,20 @@
+ 		$(DESTDIR)/etc/lxdm/LoginReady
+ 	chmod 640 $(DESTDIR)/etc/lxdm/lxdm.conf
+ 
+-themedir=$(datadir)/lxdm/themes/Industrial
+-theme_DATA= \
+-	themes/Industrial/index.theme \
+-	themes/Industrial/gtkrc \
+-	themes/Industrial/wave.svg \
+-	themes/Industrial/login.png \
+-	themes/Industrial/shade.png \
+-	themes/Industrial/lang.png \
+-	themes/Industrial/session.png \
+-	themes/Industrial/greeter.ui \
+-	themes/Industrial/greeter-gtk3.ui \
+-	themes/Industrial/gtk.css \
+-	themes/Industrial/nobody.png \
++themedir = $(datadir)/lxdm/themes/Default
++theme_DATA = \
++	themes/Default/bg.png \
++	themes/Default/greeter.ui \
++	themes/Default/greeter-gtk3.ui \
++	themes/Default/gtk.css \
++	themes/Default/gtkrc \
++	themes/Default/index.theme \
++	themes/Default/keyboard.svg \
++	themes/Default/lang.svg \
++	themes/Default/login.png \
++	themes/Default/nobody.png \
++	themes/Default/quit.svg \
++	themes/Default/session.svg \
+ 	$(NULL)
+ 
+ EXTRA_DIST= \
