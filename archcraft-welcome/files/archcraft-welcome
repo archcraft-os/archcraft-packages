@@ -15,7 +15,7 @@ stdbuf -oL -eL yad  --width='900' --height='570' --borders=0 --center \
 | while read -r line; do
 	case ${line##*/} in
 		run_app1)  help-and-tips & ;;
-		run_app2)  dunstify -u low "Launching Calamares..." && pkexec calamares -style kvantum & ;;
+		run_app2)  dunstify -u low "Launching Calamares..." && /etc/calamares/launch.sh & ;;
 		run_app3)  dunstify -u low "Launching ABIF..." && alacritty --config-file /abif-master/alacritty.yml --title 'Archcraft Installer (CLI)' -e sudo /abif-master/abif & ;;
 		*)		   echo "No URI" ;;
 	esac
