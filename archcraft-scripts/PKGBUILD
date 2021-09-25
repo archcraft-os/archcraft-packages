@@ -2,13 +2,13 @@
 
 pkgname=archcraft-scripts
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Scripts for Archcraft"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
 license=('GPL3')
 makedepends=()
-depends=()
+depends=('light' 'xorg-xbacklight')
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
