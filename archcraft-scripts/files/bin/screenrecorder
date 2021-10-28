@@ -5,7 +5,7 @@
 
 ## Record Screen with slop and ffmpeg
 
-time=`date +%Y-%m-%d-%I-%M`
+time=`date +%Y-%m-%d-%H-%M-%S`
 screen=`xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
 dir="`xdg-user-dir VIDEOS`/Screenrecorder"
 file="Capture_${time}.mp4"
