@@ -1,0 +1,25 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=archcraft-about
+pkgver=1.0
+pkgrel=2
+pkgdesc="About Archcraft"
+url="https://github.com/archcraft-os/archcraft-packages"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=('yad')
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+source=(about-os
+		about.desktop)
+
+sha256sums=('d1b6cd2207d837a959a2971d155e094027ff3f61767cfe64e9c6ec438164d486'
+            '600e6827b969dd854d37e8018da8e34107e0f3a7655ba3fa0a9fb905801170cb')
+
+package() {
+	install -Dm 755 about-os   		${pkgdir}/usr/local/bin/about-os
+	install -Dm 644 about.desktop	${pkgdir}/usr/share/applications/about.desktop
+}

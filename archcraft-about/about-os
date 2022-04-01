@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+## About Archcraft
+
+if [[ -e '/version' ]]; then
+	version="v`cat /version | cut -d'.' -f1`.`cat /version | cut -d '.' -f2`"
+else
+	version='rolling'
+fi
+
+yad --title='About Archcraft' --window-icon='archcraft-cyan' \
+	--about \
+	--pname='Archcraft' \
+	--pversion="$version" \
+	--image='distributor-logo-archcraft' \
+	--comments="Yet another minimal linux distribution, Based on Arch Linux." \
+	--copyright="Copyright 2020-`date +'%Y'`, Aditya Shakya <adi1090x@gmail.com>" \
+	--license='GPL3' \
+	--website='https://archcraft.io' \
+	--website-label='archcraft.io' \
+	--authors="Aditya Shakya <adi1090x@gmail.com>"
