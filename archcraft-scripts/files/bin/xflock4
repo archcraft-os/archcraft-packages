@@ -5,8 +5,10 @@
 
 ## Script to Lock according to session on closing lid.
 
-if [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
-    bsplock
-else
-    betterlockscreen --lock
-fi
+#if [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
+#    bsplock
+#else
+#    betterlockscreen --lock
+#fi
+
+betterlockscreen --lock
