@@ -6,13 +6,16 @@
 ## Simple Script To Pick Color Quickly.
 
 color=$(gpick -pso --no-newline)
+image=/tmp/${color}.png
 
 main() {
 	if [[ "$color" ]]; then
 		# copy color code to clipboard
 		echo $color | tr -d "\n" | xclip -selection clipboard
+		# generate preview
+		convert -size 48x48 xc:"$color" ${image}
 		# notify about it
-		dunstify -u low --replace=69 -i /usr/share/archcraft/icons/dunst/dropper.png "$color, copied to clipboard."
+		dunstify -u low --replace=69 -i ${image} "$color, copied to clipboard."
 	fi
 }
 
