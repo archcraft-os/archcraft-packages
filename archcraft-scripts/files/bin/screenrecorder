@@ -6,16 +6,17 @@
 ## Record Screen with slop and ffmpeg
 
 time=`date +%Y-%m-%d-%H-%M-%S`
-screen=`xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
+screen=`xrandr | grep 'current' | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
 dir="`xdg-user-dir VIDEOS`/Screenrecorder"
 file="Capture_${time}.mp4"
 
 # notify
 notify_user () {
+	notify_cmd="dunstify -u low --replace=699 -i /usr/share/archcraft/icons/dunst/video.png"
 	if [[ -e "$dir/$file" ]]; then
-		dunstify -u low --replace=699 -i /usr/share/archcraft/icons/dunst/video.png "Saved in $dir"
+		${notify_cmd} "Saved in $dir"
 	else
-		dunstify -u low --replace=699 -i /usr/share/archcraft/icons/dunst/video.png "Video Deleted."
+		${notify_cmd} "Video Deleted."
 	fi
 }
 

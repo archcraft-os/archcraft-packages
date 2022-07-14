@@ -11,5 +11,7 @@ else
 	CONFIG="$HOME/.config/alacritty/alacritty.yml"
 fi
 
-alacritty --class 'Music,Music' --config-file "$CONFIG" -o window.dimensions.columns=109 window.dimensions.lines=22 -e ~/.ncmpcpp/scripts/ncmpcpp-art
+alacritty --class 'Music,Music' --config-file "$CONFIG" \
+		  -o window.dimensions.columns=109 window.dimensions.lines=22 \
+		  -e ~/.ncmpcpp/scripts/ncmpcpp-art
 

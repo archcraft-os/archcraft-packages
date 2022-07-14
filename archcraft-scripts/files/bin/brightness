@@ -5,6 +5,9 @@
 
 ## Script To Manage Brightness For Archcraft.
 
+# icons
+iDIR='/usr/share/archcraft/icons/dunst'
+
 # Graphics card
 CARD=`ls /sys/class/backlight | head -n 1`
 
@@ -24,33 +27,38 @@ get_icon() {
 	backlight="$(get_backlight)"
 	current="${backlight%%%}"
 	if [[ ("$current" -ge "0") && ("$current" -le "20") ]]; then
-		icon='/usr/share/archcraft/icons/dunst/brightness-20.png'
+		icon="$iDIR"/brightness-20.png
 	elif [[ ("$current" -ge "20") && ("$current" -le "40") ]]; then
-		icon='/usr/share/archcraft/icons/dunst/brightness-40.png'
+		icon="$iDIR"/brightness-40.png
 	elif [[ ("$current" -ge "40") && ("$current" -le "60") ]]; then
-		icon='/usr/share/archcraft/icons/dunst/brightness-60.png'
+		icon="$iDIR"/brightness-60.png
 	elif [[ ("$current" -ge "60") && ("$current" -le "80") ]]; then
-		icon='/usr/share/archcraft/icons/dunst/brightness-80.png'
+		icon="$iDIR"/brightness-80.png
 	elif [[ ("$current" -ge "80") && ("$current" -le "100") ]]; then
-		icon='/usr/share/archcraft/icons/dunst/brightness-100.png'
+		icon="$iDIR"/brightness-100.png
 	fi
+}
+
+# Notify 
+notify_bl() {
+	get_icon && dunstify -u low --replace=69 -i "$icon" "Brightness : $(get_backlight)"
 }
 
 # Increase brightness
 inc_backlight() {
 	if [[ "$CARD" == *"intel_"* ]]; then
-		xbacklight -inc 10 && get_icon && dunstify -u low --replace=69 -i "$icon" "Brightness : $(get_backlight)"
+		xbacklight -inc 10 && notify_bl
 	else
-		light -A 5 && get_icon && dunstify -u low --replace=69 -i "$icon" "Brightness : $(get_backlight)"
+		light -A 5 && notify_bl
 	fi
 }
 
 # Decrease brightness
 dec_backlight() {
 	if [[ "$CARD" == *"intel_"* ]]; then
-		xbacklight -dec 10 && get_icon && dunstify -u low --replace=69 -i "$icon" "Brightness : $(get_backlight)"
+		xbacklight -dec 10 && notify_bl
 	else
-		light -U 5 && get_icon && dunstify -u low --replace=69 -i "$icon" "Brightness : $(get_backlight)"
+		light -U 5 && notify_bl
 	fi
 }
 
