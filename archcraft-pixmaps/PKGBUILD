@@ -2,7 +2,7 @@
 
 pkgname=archcraft-pixmaps
 pkgver=1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Icons & logo for Archcraft"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
