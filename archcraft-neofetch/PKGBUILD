@@ -1,0 +1,25 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=archcraft-neofetch
+pkgver=1.0
+pkgrel=1
+pkgdesc="Neofetch for Archcraft"
+url="https://github.com/archcraft-os/archcraft-packages"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+source=('neofetch'
+		'config.conf')
+
+sha256sums=('f7e70e6f7ea0f6326f8c8705e98db82bb09e4615f1c5defe5cb365ad56646895'
+            'e076edd4a4e571eb431b8efc5ba5da513c8c354c700e6aecdae7a5142382defc')
+
+package() {
+	install -Dm 755 neofetch   		${pkgdir}/usr/local/bin/neofetch
+	install -Dm 644 config.conf	    ${pkgdir}/etc/skel/.config/neofetch/config.conf
+}

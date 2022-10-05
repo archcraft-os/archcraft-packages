@@ -2,7 +2,7 @@
 
 pkgname=archcraft-fonts
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Fonts for Archcraft"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')

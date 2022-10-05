@@ -1,9 +1,9 @@
 # Maintainer: Aditya Shakya <adi1090x@gmail.com>
 
-pkgname=archcraft-pixmaps
+pkgname=archcraft-dunst-icons
 pkgver=1.0
-pkgrel=3
-pkgdesc="Icons & logo for Archcraft"
+pkgrel=1
+pkgdesc="Icons used by dunst in Archcraft"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
 license=('GPL3')
@@ -18,7 +18,6 @@ prepare() {
 }
 
 package() {
-	(find pixmaps -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/{}" \;)
 	(find dunst -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/archcraft/icons/{}" \;)
 }
 

@@ -2,7 +2,7 @@
 
 pkgname=archcraft-artworks
 pkgver=1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Artworks for Archcraft"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')

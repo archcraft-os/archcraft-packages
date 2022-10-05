@@ -2,7 +2,7 @@
 
 pkgname=archcraft-about
 pkgver=1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="About Archcraft"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
