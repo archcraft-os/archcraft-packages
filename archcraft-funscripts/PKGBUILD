@@ -1,9 +1,9 @@
 # Maintainer: Aditya Shakya <adi1090x@gmail.com>
 
-pkgname=archcraft-scripts
-pkgver=2.0
+pkgname=archcraft-funscripts
+pkgver=1.0
 pkgrel=0
-pkgdesc="Scripts for Archcraft"
+pkgdesc="Fun Scripts for Archcraft"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
 license=('GPL3')
@@ -19,5 +19,4 @@ prepare() {
 
 package() {
 	(find scripts -type f -exec install -Dm 755 "{}" "$pkgdir/usr/share/archcraft/{}" \;)
-	(find bin -type f -exec install -Dm 755 "{}" "$pkgdir/usr/local/{}" \;)
 }

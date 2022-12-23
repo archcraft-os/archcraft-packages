@@ -2,7 +2,7 @@
 
 pkgname=archcraft-dunst-icons
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Icons used by dunst in Archcraft"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
