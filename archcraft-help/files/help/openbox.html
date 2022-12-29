@@ -171,10 +171,6 @@
 															<td>Open vim (CLI text editor)</td>
 														</tr>
 														<tr>
-															<td><code>C + A + n</code></td>
-															<td>Open neovim (CLI text editor)</td>
-														</tr>
-														<tr>
 															<td><code>C + A + r</code></td>
 															<td>Open ranger (CLI file manager)</td>
 														</tr>
@@ -183,8 +179,8 @@
 															<td>Open htop (system monitor)</td>
 														</tr>
 														<tr>
-															<td><code>C + A + b</code></td>
-															<td>Open bashtop (system monitor)</td>
+															<td><code>C + A + m</code></td>
+															<td>Open ncmpcpp (with album art)</td>
 														</tr>
 													</tbody>
 												</table>
@@ -225,16 +221,62 @@
 															<td>Open screenshot menu</td>
 														</tr>
 														<tr>
-															<td><code>W + i</code></td>
-															<td>Open internet menu</td>
+															<td><code>W + Space</code></td>
+															<td>Open root menu</td>
 														</tr>
 														<tr>
-															<td><code>W + Space</code></td>
-															<td>Open openbox main menu</td>
+															<td><code>A + Space</code></td>
+															<td>Open client menu</td>
+														</tr>
+														<tr>
+															<td><code>A + S + Space</code></td>
+															<td>Open client list combined menu</td>
 														</tr>
 														<tr>
 															<td><code>C + A + Space</code></td>
 															<td>Open openbox application menu</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="wm-keys">Workspaces</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + 1/2/3/4/5</code></td>
+															<td>Switch to respective workspace</td>
+														</tr>
+														<tr>
+															<td><code>C + A + Left/Right</code></td>
+															<td>Switch to previous/next workspace</td>
+														</tr>
+														<tr>
+															<td><code>W + S + 1/2/3/4/5</code></td>
+															<td>Send active window to respective workspace</td>
+														</tr>
+														<tr>
+															<td><code>W + S + Left/Right</code></td>
+															<td>Send active window to previous/next workspace</td>
+														</tr>
+														<tr>
+															<td><code>W + =</code></td>
+															<td>Add new desktop</td>
+														</tr>
+														<tr>
+															<td><code>W + -</code></td>
+															<td>Removed last desktop</td>
+														</tr>
+														<tr>
+															<td><code>W + d</code></td>
+															<td>Toggle show desktop</td>
 														</tr>
 													</tbody>
 												</table>
@@ -251,18 +293,6 @@
 													</thead>
 													<tbody>
 														<tr>
-															<td><code>W + 1/2/3/4/5</code></td>
-															<td>Switch to respective workspace</td>
-														</tr>
-														<tr>
-															<td><code>W + S + 1/2/3/4/5</code></td>
-															<td>Move active window to respective workspace</td>
-														</tr>
-														<tr>
-															<td><code>W + S + Left/Right</code></td>
-															<td>Move active window to left/right workspace</td>
-														</tr>
-														<tr>
 															<td><code>W + Left/Right</code></td>
 															<td>Move window to the left/right edge of the screen</td>
 														</tr>
@@ -271,20 +301,32 @@
 															<td>Maximize/Center window respectively</td>
 														</tr>
 														<tr>
+															<td><code>W + S + Up/Down</code></td>
+															<td>Move window to the up/down edge of the screen</td>
+														</tr>
+														<tr>
 															<td><code>W + h/j/k/l</code></td>
 															<td>Move window to TopLeft/BottomLeft/TopRight/BottomRight</td>
 														</tr>
 														<tr>
-															<td><code>A + z/x/c</code></td>
-															<td>Tile window to left/center/right</td>
+															<td><code>W + S + h/j/k/l</code></td>
+															<td>Tile window to TopLeft/BottomLeft/TopRight/BottomRight</td>
 														</tr>
 														<tr>
 															<td><code>W + A + Up/Down/Left/Right</code></td>
-															<td>Move active window Up/Down/Left/Right</td>
+															<td>Move active window Up/Down/Left/Right relatively</td>
 														</tr>
 														<tr>
-															<td><code>C + A + Up/Down/Left/Right</code></td>
-															<td>Resize active window</td>
+															<td><code>W + C + Up/Down/Left/Right</code></td>
+															<td>Resize active window relatively</td>
+														</tr>
+														<tr>
+															<td><code>W + A + m</code></td>
+															<td>Toggle interactive move</td>
+														</tr>
+														<tr>
+															<td><code>W + A + r</code></td>
+															<td>Toggle interactive resize</td>
 														</tr>
 														<tr>
 															<td><code>W + Tab</code></td>
@@ -295,28 +337,70 @@
 															<td>Switch between applications (Current workspaces)</td>
 														</tr>
 														<tr>
-															<td><code>A + r</code></td>
-															<td>Activate resize mode</td>
-														</tr>
-														<tr>
-															<td><code>A + m</code></td>
-															<td>Activate move mode</td>
-														</tr>
-														<tr>
-															<td><code>W + d</code></td>
-															<td>Toggle show desktop</td>
-														</tr>
-														<tr>
 															<td><code>W + c/q</code></td>
 															<td>Close application</td>
 														</tr>
 														<tr>
+															<td><code>A + F4</code></td>
+															<td>Close application</td>
+														</tr>
+														<tr>
+															<td><code>A + F5</code></td>
+															<td>Iconify/Minimize current application</td>
+														</tr>
+														<tr>
+															<td><code>A + F6</code></td>
+															<td>Toggle maximize</td>
+														</tr>
+														<tr>
+															<td><code>A + F7</code></td>
+															<td>Toggle shade</td>
+														</tr>
+														<tr>
+															<td><code>A + F8</code></td>
+															<td>Toggle decorations</td>
+														</tr>
+														<tr>
+															<td><code>A + F9</code></td>
+															<td>Toggle omnipresent/sticky</td>
+														</tr>
+														<tr>
+															<td><code>A + F10</code></td>
+															<td>Toggle fullscreen</td>
+														</tr>
+														<tr>
+															<td><code>A + F11</code></td>
+															<td>Toggle always on top</td>
+														</tr>
+														<tr>
+															<td><code>A + F12</code></td>
+															<td>Toggle always on bottom</td>
+														</tr>
+														<tr>
 															<td><code>W + Escape</code></td>
-															<td>Kill application</td>
+															<td>Force kill application</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="hw-keys">Misc Keys</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + p</code></td>
+															<td>Colorpicker</td>
 														</tr>
 														<tr>
 															<td><code>C + A + l</code></td>
-															<td>Lock the screen</td>
+															<td>Lockscreen</td>
 														</tr>
 														<tr>
 															<td><code>C + S + r</code></td>
@@ -327,7 +411,7 @@
 															<td>Restart Openbox WM</td>
 														</tr>
 														<tr>
-															<td><code>C + S + Escape</code></td>
+															<td><code>C + A + Delete</code></td>
 															<td>Exit Openbox WM</td>
 														</tr>
 													</tbody>
@@ -349,10 +433,6 @@
 															<td>Take screenshot of desktop</td>
 														</tr>
 														<tr>
-															<td><code>C + Print</code></td>
-															<td>Take screenshot of active window</td>
-														</tr>
-														<tr>
 															<td><code>A + Print</code></td>
 															<td>Take screenshot of desktop in 5 seconds</td>
 														</tr>
@@ -361,7 +441,11 @@
 															<td>Take screenshot of desktop in 10 seconds</td>
 														</tr>
 														<tr>
-															<td><code>C + A + Print</code></td>
+															<td><code>C + Print</code></td>
+															<td>Take screenshot of active window</td>
+														</tr>
+														<tr>
+															<td><code>W + Print</code></td>
 															<td>Take screenshot of selected area</td>
 														</tr>
 														<tr>
@@ -374,7 +458,11 @@
 														</tr>
 														<tr>
 															<td><code>XF86AudioMute</code></td>
-															<td>Mute</td>
+															<td>Toggle Mute Speakers</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioMicMute</code></td>
+															<td>Toggle Mute Microphone</td>
 														</tr>
 														<tr>
 															<td><code>XF86Audio + Next/Prev/Play/Stop</code></td>
@@ -401,7 +489,7 @@
 					<section class="wrapper style1 align-center">
 						<div class="inner">
 							<h2>Styles / Themes</h2>
-							<p>There are <b>15+ styles</b> available for openbox, for every mood and environment, whether it's Dark or Light. Check the screenshots below.
+							<p>There are <b>10 styles</b> available for openbox, for every mood and environment, whether it's Dark or Light. Check the screenshots below.
 							<br>To Change the style, Right click on the desktop and go to <code>Preferences > Change Style</code></p>
 						</div>
 						<!-- Openbox -->
@@ -444,7 +532,7 @@
 										<img src="images/thumbs/openbox/4.png" alt="" />
 									</a>
 									<div class="caption">
-										<h3>Bouquet</h3>
+										<h3>Easy</h3>
 										<ul class="actions fixed">
 											<li><span class="button small">Openbox</span></li>
 										</ul>
@@ -455,7 +543,7 @@
 										<img src="images/thumbs/openbox/5.png" alt="" />
 									</a>
 									<div class="caption">
-										<h3>Eleven</h3>
+										<h3>Forest</h3>
 										<ul class="actions fixed">
 											<li><span class="button small">Openbox</span></li>
 										</ul>
@@ -466,7 +554,7 @@
 										<img src="images/thumbs/openbox/6.png" alt="" />
 									</a>
 									<div class="caption">
-										<h3>Eleven Dark</h3>
+										<h3>Hack</h3>
 										<ul class="actions fixed">
 											<li><span class="button small">Openbox</span></li>
 										</ul>
@@ -477,7 +565,7 @@
 										<img src="images/thumbs/openbox/7.png" alt="" />
 									</a>
 									<div class="caption">
-										<h3>Forest</h3>
+										<h3>Manhattan</h3>
 										<ul class="actions fixed">
 											<li><span class="button small">Openbox</span></li>
 										</ul>
@@ -488,7 +576,7 @@
 										<img src="images/thumbs/openbox/8.png" alt="" />
 									</a>
 									<div class="caption">
-										<h3>Hack</h3>
+										<h3>Slime</h3>
 										<ul class="actions fixed">
 											<li><span class="button small">Openbox</span></li>
 										</ul>
@@ -499,7 +587,7 @@
 										<img src="images/thumbs/openbox/9.png" alt="" />
 									</a>
 									<div class="caption">
-										<h3>Keyboards</h3>
+										<h3>Spark</h3>
 										<ul class="actions fixed">
 											<li><span class="button small">Openbox</span></li>
 										</ul>
@@ -510,106 +598,7 @@
 										<img src="images/thumbs/openbox/10.png" alt="" />
 									</a>
 									<div class="caption">
-										<h3>Kiss</h3>
-										<ul class="actions fixed">
-											<li><span class="button small">Openbox</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/openbox/11.png" class="image">
-										<img src="images/thumbs/openbox/11.png" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Landscape</h3>
-										<ul class="actions fixed">
-											<li><span class="button small">Openbox</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/openbox/12.png" class="image">
-										<img src="images/thumbs/openbox/12.png" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Manhattan</h3>
-										<ul class="actions fixed">
-											<li><span class="button small">Openbox</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/openbox/13.png" class="image">
-										<img src="images/thumbs/openbox/13.png" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Mountain</h3>
-										<ul class="actions fixed">
-											<li><span class="button small">Openbox</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/openbox/14.png" class="image">
-										<img src="images/thumbs/openbox/14.png" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Nordic</h3>
-										<ul class="actions fixed">
-											<li><span class="button small">Openbox</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/openbox/15.png" class="image">
-										<img src="images/thumbs/openbox/15.png" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Spark</h3>
-										<ul class="actions fixed">
-											<li><span class="button small">Openbox</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/openbox/16.png" class="image">
-										<img src="images/thumbs/openbox/16.png" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Tealize</h3>
-										<ul class="actions fixed">
-											<li><span class="button small">Openbox</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/openbox/17.png" class="image">
-										<img src="images/thumbs/openbox/17.png" alt="" />
-									</a>
-									<div class="caption">
 										<h3>Wave</h3>
-										<ul class="actions fixed">
-											<li><span class="button small">Openbox</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/openbox/18.png" class="image">
-										<img src="images/thumbs/openbox/18.png" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Forest Bitmap</h3>
-										<ul class="actions fixed">
-											<li><span class="button small">Openbox</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/openbox/19.png" class="image">
-										<img src="images/thumbs/openbox/19.png" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Beach Bitmap</h3>
 										<ul class="actions fixed">
 											<li><span class="button small">Openbox</span></li>
 										</ul>
