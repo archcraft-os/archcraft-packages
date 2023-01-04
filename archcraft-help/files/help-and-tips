@@ -14,6 +14,7 @@ _uri3="file://${_dir}/openbox.html"
 _uri4="file://${_dir}/bspwm.html"
 _uri5="file://${_dir}/tips.html"
 _uri6="file://${_dir}/community.html"
+_uri7="file://${_dir}/premium.html"
 
 ## Welcome Dialog
 yad --plug="$_plug" --tabnum=1 ${_dialog_cmd} \
@@ -39,6 +40,10 @@ yad --plug="$_plug" --tabnum=5 ${_dialog_cmd} \
 yad --plug="$_plug" --tabnum=6 ${_dialog_cmd} \
 	--uri="${_uri6}" &> /tmp/res6 &
 
+## Premium Dialog
+yad --plug="$_plug" --tabnum=7 ${_dialog_cmd} \
+	--uri="${_uri7}" &> /tmp/res7 &
+
 ## Launch Main Window
 yad --width='1150' --height='695' --borders=0 --center \
 	--title='Help and Tips' \
@@ -46,6 +51,6 @@ yad --width='1150' --height='695' --borders=0 --center \
 	--no-buttons --no-escape \
 	--notebook --key="$_plug" \
 	--tab="Hello" --tab="About" --tab="Openbox" --tab="Bspwm" \
-	--tab="Tips" --tab="Communities" \
+	--tab="Tips" --tab="Communities" --tab="Premium" \
 	--tab-pos=top --tab-borders=0 --active-tab=1 \
 	--expand --stack
