@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hyprland</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+				<!-- BSPWM -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Hyprland</h2>
+							<p>Hyprland is a wlroots-based tiling Wayland compositor written in C++. Noteworthy features of Hyprland include dynamic tiling, tabbed windows, a clean and readable C++ code-base, and a custom renderer that provides window animations, rounded corners, and Dual-Kawase Blur on transparent windows.</p>
+							<div class="index align-left">
+							<!-- Images -->
+								<section>
+									<div class="content">
+										<span class="image fit"><img src="images/07_hypr.png" alt="" /></span>
+									</div>
+								</section>
+					</section>
+				<!-- Keybindings -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Keybindings</h2>
+							<p>Here's a list of some important keybinds you need to know for operating hyprland easily. If you want to view, modify or add new keybinds, Edit <code>~/.config/hypr/hyprland.conf</code> file.</p>
+							<ul class="actions kbd">
+								<li><a class="button"><code>W</code> : Window</a></li>
+								<li><a class="button"><code>C</code> : Control</a></li>
+								<li><a class="button"><code>S</code> : Shift</a></li>
+								<li><a class="button"><code>A</code> : Alt</a></li>
+							</ul>
+							<div class="index align-left">
+								<!-- Table -->
+									<section>
+										<div class="content">
+
+											<h3 id="apps-keys">Applications</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + Return</code></td>
+															<td>Open terminal (alacritty)</td>
+														</tr>
+														<tr>
+															<td><code>W + S + Return</code></td>
+															<td>Open floating terminal</td>
+														</tr>
+														<tr>
+															<td><code>W + t</code></td>
+															<td>Open fullscreen terminal</td>
+														</tr>
+														<tr>
+															<td><code>W + S + f</code></td>
+															<td>Open file manager (thunar)</td>
+														</tr>
+														<tr>
+															<td><code>W + S + e</code></td>
+															<td>Open text editor (geany)</td>
+														</tr>
+														<tr>
+															<td><code>W + S + w</code></td>
+															<td>Open web browser (firefox)</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="menu-keys">Menu and Applets</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>Window</code></td>
+															<td>Open application launcher</td>
+														</tr>
+														<tr>
+															<td><code>W + d</code></td>
+															<td>Open application launcher</td>
+														</tr>
+														<tr>
+															<td><code>W + r</code></td>
+															<td>Open command runner</td>
+														</tr>
+														<tr>
+															<td><code>W + n</code></td>
+															<td>Open network manager</td>
+														</tr>
+														<tr>
+															<td><code>W + b</code></td>
+															<td>Open bluetooth applet</td>
+														</tr>
+														<tr>
+															<td><code>W + m</code></td>
+															<td>Open media player</td>
+														</tr>
+														<tr>
+															<td><code>W + x</code></td>
+															<td>Open powermenu</td>
+														</tr>
+														<tr>
+															<td><code>W + a</code></td>
+															<td>Open screenshot menu</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="wm-keys">Window Management</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + c/q</code></td>
+															<td>Close application</td>
+														</tr>
+														<tr>
+															<td><code>W + f</code></td>
+															<td>Toggle fullscreen mode</td>
+														</tr>
+														<tr>
+															<td><code>W + s</code></td>
+															<td>Toggle pseudo mode</td>
+														</tr>
+														<tr>
+															<td><code>W + Space</code></td>
+															<td>Toggle between floating and tiled mode</td>
+														</tr>
+														<tr>
+															<td><code>W + Left/Right/Up/Down</code></td>
+															<td>Change focus of the window directionally</td>
+														</tr>
+														<tr>
+															<td><code>W + S + Left/Right/Up/Down</code></td>
+															<td>Swap windows directionally</td>
+														</tr>
+														<tr>
+															<td><code>W + C + Left/Right/Up/Down</code></td>
+															<td>Resize windows directionally</td>
+														</tr>
+														<tr>
+															<td><code>W + A + Left/Right/Up/Down</code></td>
+															<td>Move (floating) windows directionally</td>
+														</tr>
+														<tr>
+															<td><code>W + Tab</code></td>
+															<td>Switch between windows</td>
+														</tr>
+														<tr>
+															<td><code>W + 1..8</code></td>
+															<td>Switch to respective workspace</td>
+														</tr>
+														<tr>
+															<td><code>W + S + 1..8</code></td>
+															<td>Move focused window to respective workspace</td>
+														</tr>
+														<tr>
+															<td><code>C + A + Left/Right</code></td>
+															<td>Switch to next/previous workspace</td>
+														</tr>
+														<tr>
+															<td><code>C + A + S + Left/Right</code></td>
+															<td>Send active window to next/previous workspace</td>
+														</tr>
+														<tr>
+															<td><code>W + C + f</code></td>
+															<td>Toggled all floating on a workspace</td>
+														</tr>
+														<tr>
+															<td><code>W + C + s</code></td>
+															<td>Toggled all pseudo on a workspace</td>
+														</tr>
+														<tr>
+															<td><code>W + S + p</code></td>
+															<td>Toggled pinning</td>
+														</tr>
+														<tr>
+															<td><code>W + S + s</code></td>
+															<td>Swap next</td>
+														</tr>
+														<tr>
+															<td><code>W + S + o</code></td>
+															<td>Toggle opaque</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="wm-keys">Misc Keys</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + p</code></td>
+															<td>Color Picker</td>
+														</tr>
+														<tr>
+															<td><code>C + A + l</code></td>
+															<td>Lockscreen</td>
+														</tr>
+														<tr>
+															<td><code>C + A + Delete</code></td>
+															<td>Quit Hyprland session</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="hw-keys">Hardware Keys</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>Print</code></td>
+															<td>Take screenshot of desktop</td>
+														</tr>
+														<tr>
+															<td><code>A + Print</code></td>
+															<td>Take screenshot of desktop in 5 seconds</td>
+														</tr>
+														<tr>
+															<td><code>S + Print</code></td>
+															<td>Take screenshot of desktop in 10 seconds</td>
+														</tr>
+														<tr>
+															<td><code>C + Print</code></td>
+															<td>Take screenshot of focused window</td>
+														</tr>
+														<tr>
+															<td><code>W + Print</code></td>
+															<td>Take screenshot of selected area</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioRaiseVolume</code></td>
+															<td>Increase Volume</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioLowerVolume</code></td>
+															<td>Decrease Volume</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioMute</code></td>
+															<td>Toggle Mute Speakers</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioMicMute</code></td>
+															<td>Toggle Mute Microphone</td>
+														</tr>
+														<tr>
+															<td><code>XF86Audio + Next/Prev/Play/Stop</code></td>
+															<td>Media Controls (MPD)</td>
+														</tr>
+														<tr>
+															<td><code>XF86MonBrightnessUp</code></td>
+															<td>Increase Screen Brightness</td>
+														</tr>
+														<tr>
+															<td><code>XF86MonBrightnessDown</code></td>
+															<td>Decrease Screen Brightness</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+										</div>
+									</section>
+							</div>
+						</div>
+					</section>
+				<!-- Pywal -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Themes</h2>
+							<p><code>pywal</code> support has been added to hyprland. To change themes, <b>Left Click</b> on the theme module on waybar. To restore the default theme, <b>Right Click</b> on the same module on waybar.</p>
+						</div>
+					</section>
+
+				<!-- Alt -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Hyprland Catppuccin</h2>
+							<p>To install the catppuccin version of hyprland, run : <code>sudo pacman -S archcraft-hyprland-catppuccin</code></p>
+						</div>
+					</section>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>

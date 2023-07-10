@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>NEWM</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+				<!-- BSPWM -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>NEWM</h2>
+							<p>NEWM is a Wayland compositor written with laptops and touchpads in mind. The idea is, instead of placing windows inside the small viewport (that is, the monitor) to arrange them along an arbitrarily large two-dimensional wall (generally without windows overlapping) and focus the compositors job on moving around along this wall efficiently and providing ways to the user to rearrange the wall such that they find the overall layout intuitive.</p>
+							<div class="index align-left">
+							<!-- Images -->
+								<section>
+									<div class="content">
+										<span class="image fit"><img src="images/08_newm.png" alt="" /></span>
+									</div>
+								</section>
+					</section>
+				<!-- Keybindings -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Keybindings</h2>
+							<p>Here's a list of some important keybinds you need to know for operating newm easily. If you want to view, modify or add new keybinds, Edit <code>~/.config/newm/config.py</code> file.</p>
+							<ul class="actions kbd">
+								<li><a class="button"><code>W</code> : Window</a></li>
+								<li><a class="button"><code>C</code> : Control</a></li>
+								<li><a class="button"><code>S</code> : Shift</a></li>
+								<li><a class="button"><code>A</code> : Alt</a></li>
+							</ul>
+							<div class="index align-left">
+								<!-- Table -->
+									<section>
+										<div class="content">
+
+											<h3 id="apps-keys">Applications</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + Return</code></td>
+															<td>Open terminal (foot)</td>
+														</tr>
+														<tr>
+															<td><code>W + S + Return</code></td>
+															<td>Open floating terminal</td>
+														</tr>
+														<tr>
+															<td><code>W + A + Return</code></td>
+															<td>Open terminal with selected area</td>
+														</tr>
+														<tr>
+															<td><code>W + f</code></td>
+															<td>Open file manager (thunar)</td>
+														</tr>
+														<tr>
+															<td><code>W + e</code></td>
+															<td>Open text editor (geany)</td>
+														</tr>
+														<tr>
+															<td><code>W + w</code></td>
+															<td>Open web browser (firefox)</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="menu-keys">Menu and Applets</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + d</code></td>
+															<td>Open application launcher</td>
+														</tr>
+														<tr>
+															<td><code>W + r</code></td>
+															<td>Open command runner</td>
+														</tr>
+														<tr>
+															<td><code>W + n</code></td>
+															<td>Open network manager</td>
+														</tr>
+														<tr>
+															<td><code>W + b</code></td>
+															<td>Open bluetooth applet</td>
+														</tr>
+														<tr>
+															<td><code>W + m</code></td>
+															<td>Open media player</td>
+														</tr>
+														<tr>
+															<td><code>W + x</code></td>
+															<td>Open powermenu</td>
+														</tr>
+														<tr>
+															<td><code>W + s</code></td>
+															<td>Open screenshot menu</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="wm-keys">Window Management</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>Window/Super</code></td>
+															<td>Show Overview</td>
+														</tr>
+														<tr>
+															<td><code>W + c/q</code></td>
+															<td>Close application</td>
+														</tr>
+														<tr>
+															<td><code>W + Left/Right/Up/Down</code></td>
+															<td>Change focus of the window directionally</td>
+														</tr>
+														<tr>
+															<td><code>W + S + Left/Right/Up/Down</code></td>
+															<td>Move windows directionally</td>
+														</tr>
+														<tr>
+															<td><code>W + C + Left/Right/Up/Down</code></td>
+															<td>Resize windows directionally</td>
+														</tr>
+														<tr>
+															<td><code>W + a</code></td>
+															<td>Move in stack</td>
+														</tr>
+														<tr>
+															<td><code>W + Space</code></td>
+															<td>Toggle fullscreen</td>
+														</tr>
+														<tr>
+															<td><code>W + S + Space</code></td>
+															<td>Toggle floating</td>
+														</tr>
+														<tr>
+															<td><code>W + Minus</code></td>
+															<td>Scale down</td>
+														</tr>
+														<tr>
+															<td><code>W + Equal</code></td>
+															<td>Scale Up</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="wm-keys">Gestures</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + MOVE_1</code></td>
+															<td>Move windows</td>
+														</tr>
+														<tr>
+															<td><code>W + SWIPE_2</code></td>
+															<td>Resize windows</td>
+														</tr>
+														<tr>
+															<td><code>SWIPE_3</code></td>
+															<td>Swipe within the 2D workspace</td>
+														</tr>
+														<tr>
+															<td><code>SWIPE_4</code></td>
+															<td>Scale up and down</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="wm-keys">Misc Keys</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>W + p</code></td>
+															<td>Color Picker</td>
+														</tr>
+														<tr>
+															<td><code>C + A + l</code></td>
+															<td>Lockscreen</td>
+														</tr>
+														<tr>
+															<td><code>W + S + c</code></td>
+															<td>Reload the configuration file</td>
+														</tr>
+														<tr>
+															<td><code>W + S + q</code></td>
+															<td>Quit NEWM session</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<h3 id="hw-keys">Hardware Keys</h3>
+											<div class="table-wrapper">
+												<table class="alt">
+													<thead>
+														<tr>
+															<th>Keybind</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><code>Print</code></td>
+															<td>Take screenshot of desktop</td>
+														</tr>
+														<tr>
+															<td><code>A + Print</code></td>
+															<td>Take screenshot of desktop in 5 seconds</td>
+														</tr>
+														<tr>
+															<td><code>S + Print</code></td>
+															<td>Take screenshot of desktop in 10 seconds</td>
+														</tr>
+														<tr>
+															<td><code>W + Print</code></td>
+															<td>Take screenshot of selected area</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioRaiseVolume</code></td>
+															<td>Increase Volume</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioLowerVolume</code></td>
+															<td>Decrease Volume</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioMute</code></td>
+															<td>Toggle Mute Speakers</td>
+														</tr>
+														<tr>
+															<td><code>XF86AudioMicMute</code></td>
+															<td>Toggle Mute Microphone</td>
+														</tr>
+														<tr>
+															<td><code>XF86MonBrightnessUp</code></td>
+															<td>Increase Screen Brightness</td>
+														</tr>
+														<tr>
+															<td><code>XF86MonBrightnessDown</code></td>
+															<td>Decrease Screen Brightness</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+										</div>
+									</section>
+							</div>
+						</div>
+					</section>
+				<!-- Alt -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>NEWM Blur</h2>
+							<p>To install the blur version of newm, run : <code>sudo pacman -S archcraft-newm-blur</code></p>
+						</div>
+					</section>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>

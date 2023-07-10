@@ -2,19 +2,20 @@
 
 ## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
 ##
-## Help & Tips App for Archcraft
+## Help & Tips App for Archcraft WSE
 
 ## Data
 _dir='/usr/share/archcraft/help'
 _plug="$RANDOM"
 _dialog_cmd="--html --disable-search --browser --print-uri --uri-handler='firefox --new-tab %s'"
-_uri1="file://${_dir}/hello.html"
-_uri2="file://${_dir}/about.html"
-_uri3="file://${_dir}/openbox.html"
-_uri4="file://${_dir}/bspwm.html"
-_uri5="file://${_dir}/tips.html"
-_uri6="file://${_dir}/community.html"
-_uri7="file://${_dir}/premium.html"
+_uri1="file://${_dir}/01_hello.html"
+_uri2="file://${_dir}/02_about.html"
+_uri3="file://${_dir}/03_sway.html"
+_uri4="file://${_dir}/04_wayfire.html"
+_uri5="file://${_dir}/05_river.html"
+_uri6="file://${_dir}/06_hyprland.html"
+_uri7="file://${_dir}/07_newm.html"
+_uri8="file://${_dir}/08_community.html"
 
 ## Welcome Dialog
 yad --plug="$_plug" --tabnum=1 ${_dialog_cmd} \
@@ -24,25 +25,29 @@ yad --plug="$_plug" --tabnum=1 ${_dialog_cmd} \
 yad --plug="$_plug" --tabnum=2 ${_dialog_cmd} \
 	--uri="${_uri2}" &> /tmp/res2 &
 
-## Openbox Dialog
+## Sway Dialog
 yad --plug="$_plug" --tabnum=3 ${_dialog_cmd} \
 	--uri="${_uri3}" &> /tmp/res3 &
 
-## Bspwm Dialog
+## Wayfire Dialog
 yad --plug="$_plug" --tabnum=4 ${_dialog_cmd} \
 	--uri="${_uri4}" &> /tmp/res4 &
 
-## Tips Dialog
+## River Dialog
 yad --plug="$_plug" --tabnum=5 ${_dialog_cmd} \
 	--uri="${_uri5}" &> /tmp/res5 &
 
-## Donate Dialog
+## Hyprland Dialog
 yad --plug="$_plug" --tabnum=6 ${_dialog_cmd} \
 	--uri="${_uri6}" &> /tmp/res6 &
 
-## Premium Dialog
+## NEWM Dialog
 yad --plug="$_plug" --tabnum=7 ${_dialog_cmd} \
 	--uri="${_uri7}" &> /tmp/res7 &
+
+## Community Dialog
+yad --plug="$_plug" --tabnum=8 ${_dialog_cmd} \
+	--uri="${_uri8}" &> /tmp/res8 &
 
 ## Launch Main Window
 yad --width='1150' --height='695' --borders=0 --center \
@@ -50,7 +55,7 @@ yad --width='1150' --height='695' --borders=0 --center \
 	--window-icon=archcraft-purple \
 	--no-buttons --no-escape \
 	--notebook --key="$_plug" \
-	--tab="Hello" --tab="About" --tab="Openbox" --tab="Bspwm" \
-	--tab="Tips" --tab="Communities" --tab="Premium" \
+	--tab="Hello" --tab="About" --tab="Sway" --tab="Wayfire" --tab="River" \
+	--tab="Hyprland" --tab="Newm" --tab="Communities" \
 	--tab-pos=top --tab-borders=0 --active-tab=1 \
-	--expand --stack
+	--stack

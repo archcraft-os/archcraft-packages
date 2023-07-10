@@ -1,15 +1,15 @@
 # Maintainer: Aditya Shakya <adi1090x@gmail.com>
 
-pkgname=archcraft-help
-pkgver=2.0
+pkgname=archcraft-help-prime
+pkgver=1.0
 pkgrel=0
-pkgdesc="Help and Tips for Archcraft"
+pkgdesc="Help and Tips for Archcraft Prime"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
 license=('GPL3')
 makedepends=()
 depends=('yad')
-conflicts=('archcraft-help-prime' 'archcraft-help-wse')
+conflicts=('archcraft-help' 'archcraft-help-wse')
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 
