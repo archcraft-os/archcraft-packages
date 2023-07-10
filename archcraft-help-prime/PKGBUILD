@@ -2,7 +2,7 @@
 
 pkgname=archcraft-help-prime
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc="Help and Tips for Archcraft Prime"
 url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')

@@ -17,6 +17,11 @@ _uri6="file://${_dir}/06_hyprland.html"
 _uri7="file://${_dir}/07_newm.html"
 _uri8="file://${_dir}/08_community.html"
 
+## Wayland
+if [[ "$XDG_SESSION_TYPE" == 'wayland' ]]; then
+    GDK_BACKEND=x11
+fi
+
 ## Welcome Dialog
 yad --plug="$_plug" --tabnum=1 ${_dialog_cmd} \
 	--uri="${_uri1}" &> /tmp/res1 &
