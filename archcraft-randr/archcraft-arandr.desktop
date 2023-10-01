@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Manage Monitors
+Comment=Rofi frontend (with xrandr backend) to manage monitors
+Exec=/usr/bin/archcraft-randr
+Icon=display
+Type=Application
+Categories=System;
