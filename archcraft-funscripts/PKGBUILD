@@ -2,19 +2,15 @@
 
 pkgname=archcraft-funscripts
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc="Fun Scripts for Archcraft"
-url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
+url="https://github.com/archcraft-os/archcraft-packages"
 license=('GPL3')
-makedepends=()
-depends=()
-conflicts=()
-provides=("${pkgname}")
 options=(!strip !emptydirs)
 
 prepare() {
-	cp -af ../files/. ${srcdir}
+	cp -af ../files/. "$srcdir"
 }
 
 package() {

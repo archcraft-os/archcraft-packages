@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Help and Tips
 Comment=Help and Tips for Archcraft WSE
-Exec=help-and-tips
+Exec=archcraft-help-wse
 Icon=archcraft-purple
 Type=Application
 Categories=System;

@@ -2,25 +2,20 @@
 
 pkgname=archcraft-welcome
 pkgver=1.0
-pkgrel=5
+pkgrel=6
 pkgdesc="Welcome app for Archcraft"
-url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
+url="https://github.com/archcraft-os/archcraft-packages"
 license=('GPL3')
-makedepends=()
 depends=('yad')
-conflicts=()
-provides=("${pkgname}")
 options=(!strip !emptydirs)
 
 prepare() {
-	cp -af ../files/. ${srcdir}
+	cp -af ../files/. "$srcdir"
 }
 
 package() {
 	(find welcome -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/archcraft/{}" \;)
-	install -Dm 755 archcraft-welcome 			${pkgdir}/usr/local/bin/archcraft-welcome
-	install -Dm 644 archcraft-welcome.desktop	${pkgdir}/usr/share/applications/archcraft-welcome.desktop
+	install -Dm 755 archcraft-welcome 			"$pkgdir"/usr/bin/archcraft-welcome
+	install -Dm 644 archcraft-welcome.desktop	"$pkgdir"/usr/share/applications/archcraft-welcome.desktop
 }
-
-

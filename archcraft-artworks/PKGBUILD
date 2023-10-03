@@ -2,23 +2,17 @@
 
 pkgname=archcraft-artworks
 pkgver=1.0
-pkgrel=4
-pkgdesc="Artworks for Archcraft"
-url="https://github.com/archcraft-os/archcraft-packages"
+pkgrel=5
+pkgdesc="Artworks (ascii, logos, icons) for Archcraft"
 arch=('any')
+url="https://github.com/archcraft-os/archcraft-packages"
 license=('GPL3')
-makedepends=()
-depends=()
-conflicts=()
-provides=("${pkgname}")
 options=(!strip !emptydirs)
 
 prepare() {
-	cp -af ../files/. ${srcdir}
+	cp -af ../files/. "$srcdir"
 }
 
 package() {
 	(find * -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/archcraft/artworks/{}" \;)
 }
-
-

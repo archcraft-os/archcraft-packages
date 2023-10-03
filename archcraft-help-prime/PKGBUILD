@@ -2,25 +2,21 @@
 
 pkgname=archcraft-help-prime
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Help and Tips for Archcraft Prime"
-url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
+url="https://github.com/archcraft-os/archcraft-packages"
 license=('GPL3')
-makedepends=()
 depends=('yad')
 conflicts=('archcraft-help' 'archcraft-help-wse')
-provides=("${pkgname}")
 options=(!strip !emptydirs)
 
 prepare() {
-	cp -af ../files/. ${srcdir}
+	cp -af ../files/. "$srcdir"
 }
 
 package() {
 	(find help -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/archcraft/{}" \;)
-	install -Dm 755 help-and-tips 			${pkgdir}/usr/local/bin/help-and-tips
-	install -Dm 644 help-and-tips.desktop	${pkgdir}/usr/share/applications/help-and-tips.desktop
+	install -Dm 755 archcraft-help-prime 			"$pkgdir"/usr/bin/archcraft-help-prime
+	install -Dm 644 archcraft-help-prime.desktop	"$pkgdir"/usr/share/applications/archcraft-help-prime.desktop
 }
-
-

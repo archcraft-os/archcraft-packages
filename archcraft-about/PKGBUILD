@@ -1,25 +1,22 @@
 # Maintainer: Aditya Shakya <adi1090x@gmail.com>
 
 pkgname=archcraft-about
-pkgver=1.0
-pkgrel=4
-pkgdesc="About Archcraft"
-url="https://github.com/archcraft-os/archcraft-packages"
+pkgver=2.0
+pkgrel=0
+pkgdesc="Details regarding Archcraft and credits"
 arch=('any')
+url="https://github.com/archcraft-os/archcraft-packages"
 license=('GPL3')
-makedepends=()
 depends=('yad')
-conflicts=()
-provides=("${pkgname}")
 options=(!strip !emptydirs)
 
-source=(about-os
-		about.desktop)
+source=(archcraft-about
+		archcraft-about.desktop)
 
-sha256sums=('4e2f415f09946fca92b16cf75fef8bd410bc1ee8c7bbe6cc35bddcaea1e37fb5'
-            '600e6827b969dd854d37e8018da8e34107e0f3a7655ba3fa0a9fb905801170cb')
+sha256sums=('174928a942e34dd7a7beaaee2d6a6ac0105331d38bea7110e01db229fc9fad03'
+            'eec6a06011fc695076b61a9e59a5f9af52d954d49d663c1df2282c6329c956ff')
 
 package() {
-	install -Dm 755 about-os   		${pkgdir}/usr/local/bin/about-os
-	install -Dm 644 about.desktop	${pkgdir}/usr/share/applications/about.desktop
+	install -Dm 755 archcraft-about   		"$pkgdir"/usr/bin/archcraft-about
+	install -Dm 644 archcraft-about.desktop	"$pkgdir"/usr/share/applications/archcraft-about.desktop
 }

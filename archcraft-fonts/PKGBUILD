@@ -2,23 +2,17 @@
 
 pkgname=archcraft-fonts
 pkgver=1.0
-pkgrel=6
-pkgdesc="Fonts for Archcraft"
-url="https://github.com/archcraft-os/archcraft-packages"
+pkgrel=7
+pkgdesc="Text and icon fonts for Archcraft"
 arch=('any')
+url="https://github.com/archcraft-os/archcraft-packages"
 license=('GPL3')
-makedepends=()
-depends=()
-conflicts=()
-provides=("${pkgname}")
 options=(!strip !emptydirs)
 
 prepare() {
-	cp -af ../files/. ${srcdir}
+	cp -af ../files/. "$srcdir"
 }
 
 package() {
 	(find * -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/fonts/archcraft/{}" \;)
 }
-
-

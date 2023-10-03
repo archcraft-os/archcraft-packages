@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Help and Tips
-Comment=Help and Tips for Archcraft
-Exec=help-and-tips
+Comment=Help and Tips for Archcraft Prime
+Exec=archcraft-help-prime
 Icon=archcraft-purple
 Type=Application
 Categories=System;

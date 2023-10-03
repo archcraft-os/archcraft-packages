@@ -2,23 +2,17 @@
 
 pkgname=archcraft-dunst-icons
 pkgver=1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Icons used by dunst in Archcraft"
-url="https://github.com/archcraft-os/archcraft-packages"
 arch=('any')
+url="https://github.com/archcraft-os/archcraft-packages"
 license=('GPL3')
-makedepends=()
-depends=()
-conflicts=()
-provides=("${pkgname}")
 options=(!strip !emptydirs)
 
 prepare() {
-	cp -af ../files/. ${srcdir}
+	cp -af ../files/. "$srcdir"
 }
 
 package() {
 	(find dunst -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/archcraft/icons/{}" \;)
 }
-
-
