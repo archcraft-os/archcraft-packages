@@ -14,7 +14,7 @@ source=(archcraft-arandr.desktop
 		archcraft-randr.rasi)
 
 sha256sums=('7ca8b423ebb9b4bdc466f525990b6b712eea0147e7e9930fccee977c004fe1e8'
-            'a7c2cecfba997249db87ec21905e55a148d8161266fe0eb05765b4514cc020f5'
+            'c870810a1d9474c1a84710ed21d1189ee268742e99ddef0f0bf0edd13dba3b55'
             '8c14d6dcecf946fb77b8efaca647f6807b61c7bdc7272ad0e1b610fa5f91c02b')
 
 package() {
