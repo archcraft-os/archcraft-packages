@@ -20,21 +20,80 @@ function rofi_cmd() {
 }
 
 function reload_theme() {
+	local config_dir="$HOME/.config"
+	local openbox_dir="$config_dir/openbox"
+	local bspwm_dir="$config_dir/bspwm"
+	local i3_dir="$config_dir/i3"
+	local qtile_dir="$config_dir/qtile"
+	local herb_dir="$config_dir/herbstluftwm"
+	local berry_dir="$config_dir/berry"
+	local bb_dir="$HOME/.blackbox"
+	local cwm_dir="$HOME/.cwm"
+	local ewm_dir="$HOME/.evilwm"
+	local fluxbox_dir="$HOME/.fluxbox"
+	local xmonad_dir="$HOME/.xmonad"
+	local _2bwm_dir='/usr/share/archcraft/2bwm'
+	local dwm_dir='/usr/share/archcraft/dwm'
+
+	set_wallpaper() {
+		hsetroot -cover "$1"
+	}
+
 	if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
-		wallpaper="`cat $HOME/.config/nitrogen/bg-saved.cfg | grep -w 'file' | cut -d'=' -f2 | head -n1`"
+		wallpaper="`cat $config_dir/nitrogen/bg-saved.cfg | grep -w 'file' | cut -d'=' -f2 | head -n1`"
 		for head in {0..10}; do
 			nitrogen --head="$head" --save --set-zoom-fill "$wallpaper" &>/dev/null
 		done
-		"$HOME"/.config/openbox-themes/themes/launch-bar.sh
+		"$openbox_dir"/themes/launch-bar.sh
 	elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
-		"$HOME"/.fehbg
-		"$HOME"/.config/bspwm/scripts/bspbar
+		bspc wm --restart
 	elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
-		"$HOME"/.config/i3/themes/wallpaper.sh
-		"$HOME"/.config/i3/themes/polybar.sh
+		if [[ `pacman -Q archcraft-i3wm-premium` ]]; then
+			"$i3_dir"/themes/wallpaper.sh
+			"$i3_dir"/themes/polybar.sh
+		else
+			set_wallpaper "$i3_dir"/theme/wallpaper
+			"$i3_dir"/theme/polybar.sh
+		fi
 	elif [[ "$DESKTOP_SESSION" == 'qtile' ]]; then
-		"$HOME"/.config/qtile/themes/wallpaper.sh
-		"$HOME"/.config/qtile/themes/polybar.sh
+		if [[ `pacman -Q archcraft-qtile-premium` ]]; then
+			"$qtile_dir"/themes/wallpaper.sh
+			"$qtile_dir"/themes/polybar.sh
+		else
+			set_wallpaper "$qtile_dir"/theme/wallpaper
+			"$qtile_dir"/theme/polybar.sh
+		fi
+		qtile cmd-obj -o cmd -f reload_config
+	elif [[ "$DESKTOP_SESSION" == '2bwm' ]]; then
+		set_wallpaper "$_2bwm_dir"/theme/wallpaper
+		"$_2bwm_dir"/scripts/2bwm_bar
+	elif [[ "$DESKTOP_SESSION" == 'berry' ]]; then
+		set_wallpaper "$berry_dir"/theme/wallpaper
+		"$berry_dir"/scripts/berry_bar
+	elif [[ "$DESKTOP_SESSION" == 'blackbox' ]]; then
+		set_wallpaper "$bb_dir"/theme/wallpaper
+		"$bb_dir"/scripts/bb_bar
+	elif [[ "$DESKTOP_SESSION" == 'cwm' ]]; then
+		set_wallpaper "$cwm_dir"/theme/wallpaper
+		"$cwm_dir"/scripts/cwm_bar
+	elif [[ "$DESKTOP_SESSION" == 'dwm' ]]; then
+		set_wallpaper "$dwm_dir"/theme/wallpaper
+	elif [[ "$DESKTOP_SESSION" == 'evilwm' ]]; then
+		set_wallpaper "$ewm_dir"/theme/wallpaper
+		"$ewm_dir"/scripts/evilwm_bar
+	elif [[ "$DESKTOP_SESSION" == 'fluxbox' ]]; then
+		set_wallpaper "$fluxbox_dir"/backgrounds/default.jpg
+		if [[ `pidof polybar` ]]; then
+			"$fluxbox_dir"/scripts/fbox_bar
+		fi
+	elif [[ "$DESKTOP_SESSION" == 'herbstluftwm' ]]; then
+		#set_wallpaper "$herb_dir"/theme/wallpaper
+		hsetroot -solid "#BDBAB5"
+		"$herb_dir"/scripts/herb_bar
+		herbstclient detect_monitors
+	elif [[ "$DESKTOP_SESSION" == 'xmonad' ]]; then
+		set_wallpaper "$xmonad_dir"/theme/wallpaper
+		"$xmonad_dir"/scripts/xmonad_bar
 	fi
 }
 
