@@ -11,6 +11,17 @@ else
     notify_cmd='dunstify'
 fi
 
+## Run Help
+run_help() {
+	if [[ -x `archcraft-help` ]]; then
+		archcraft-help
+	elif [[ -x `archcraft-help-prime` ]]; then
+		archcraft-help-prime
+	elif [[ -x `archcraft-help-wse` ]]; then
+		archcraft-help-wse
+	fi
+}
+
 DIR='/usr/share/archcraft/welcome'
 stdbuf -oL -eL yad  --width='900' --height='570' --borders=0 --center \
 					--title='Welcome' \
@@ -20,7 +31,7 @@ stdbuf -oL -eL yad  --width='900' --height='570' --borders=0 --center \
                     --print-uri 2>&1 \
 | while read -r line; do
 	case ${line##*/} in
-		run_app1)  help-and-tips & ;;
+		run_app1)  run_help & ;;
 		run_app2)  ${notify_cmd} -u low "Launching Calamares..." && /etc/calamares/launch.sh & ;;
 		run_app3)  ${notify_cmd} -u low "Launching ABIF..." && alacritty --config-file /abif-master/alacritty.yml --title 'Archcraft Installer (CLI)' -e sudo /abif-master/abif & ;;
 		*)		   echo "No URI" ;;
