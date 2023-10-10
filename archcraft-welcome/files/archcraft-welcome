@@ -33,7 +33,7 @@ stdbuf -oL -eL yad  --width='900' --height='570' --borders=0 --center \
 	case ${line##*/} in
 		run_app1)  run_help & ;;
 		run_app2)  ${notify_cmd} -u low "Launching Calamares..." && /etc/calamares/launch.sh & ;;
-		run_app3)  ${notify_cmd} -u low "Launching ABIF..." && alacritty --config-file /abif-master/alacritty.yml --title 'Archcraft Installer (CLI)' -e sudo /abif-master/abif & ;;
+		run_app3)  ${notify_cmd} -u low "Launching ABIF..." && alacritty --class 'alacritty-float,alacritty-float' --config-file /abif-master/alacritty.yml --title 'Archcraft Installer (CLI)' -e sudo /abif-master/abif & ;;
 		*)		   echo "No URI" ;;
 	esac
 done
