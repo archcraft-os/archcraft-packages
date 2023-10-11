@@ -62,5 +62,4 @@ yad --width='1150' --height='695' --borders=0 --center \
 	--notebook --key="$_plug" \
 	--tab="Hello" --tab="About" --tab="Sway" --tab="Wayfire" --tab="River" \
 	--tab="Hyprland" --tab="Newm" --tab="Communities" \
-	--tab-pos=top --tab-borders=0 --active-tab=1 \
-	--stack
+	--tab-pos=top --tab-borders=5 --active-tab=1

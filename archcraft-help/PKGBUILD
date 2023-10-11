@@ -2,7 +2,7 @@
 
 pkgname=archcraft-help
 pkgver=2.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Help and Tips for Archcraft"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-packages"

@@ -57,5 +57,5 @@ yad --width='1150' --height='695' --borders=0 --center \
 	--notebook --key="$_plug" \
 	--tab="Hello" --tab="About" --tab="Openbox" --tab="Bspwm" \
 	--tab="Tips" --tab="Communities" --tab="Premium" \
-	--tab-pos=top --tab-borders=0 --active-tab=1 \
-	--expand --stack
+	--tab-pos=top --tab-borders=5 --active-tab=1 \
+	--expand
