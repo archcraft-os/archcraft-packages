@@ -127,7 +127,7 @@ function main() {
 
   ${=xrandr_cmd}
 
-  if [[ "${position[(w)1]}" == (--left-of|--right-of|--above|--below) ]]; then
+  if [[ "${position[(w)1]}" == (--left-of|--right-of|--above|--below|--primary|--same-as|--off) ]]; then
     reload_theme
   fi
 }
