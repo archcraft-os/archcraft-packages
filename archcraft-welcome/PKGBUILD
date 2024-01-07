@@ -2,7 +2,7 @@
 
 pkgname=archcraft-welcome
 pkgver=1.0
-pkgrel=8
+pkgrel=9
 pkgdesc="Welcome app for Archcraft"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-packages"
