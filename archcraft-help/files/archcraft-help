@@ -2,11 +2,38 @@
 
 ## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
 ##
-## Help & Tips App for Archcraft
+## Archcraft Help
 
-## Data
-_dir='/usr/share/archcraft/help'
-_file="$_dir/archcraft-help.pdf"
+## Wayland
+if [[ "$XDG_SESSION_TYPE" == 'wayland' ]]; then
+    notify_cmd='notify-send'
+else
+    notify_cmd='dunstify'
+fi
 
-## Launch Main Window
-zathura --mode=presentation "$_file"
+## Run CMD
+run_cmd() {
+	if [[ "$1" == '--wiki' ]]; then
+		xdg-open https://wiki.archcraft.io/docs/intro
+	elif [[ "$1" == '--tips' ]]; then
+		xdg-open https://wiki.archcraft.io/blog
+	elif [[ "$1" == '--imgs' ]]; then
+		xdg-open https://gallery.archcraft.io
+	fi
+}
+
+DIR='/usr/share/archcraft/help'
+stdbuf -oL -eL yad  --width='950' --height='590' --borders=0 --center \
+					--title='Archcraft Help' \
+					--window-icon=archcraft-purple \
+					--no-buttons --no-escape \
+                    --html --uri="$DIR/help.html" \
+                    --print-uri 2>&1 \
+| while read -r line; do
+	case ${line##*/} in
+		run_app1)  ${notify_cmd} -u low "Opening Wiki in $BROWSER" && run_cmd --wiki & ;;
+		run_app2)  ${notify_cmd} -u low "Opening Tutorials in $BROWSER" && run_cmd --tips & ;;
+		run_app3)  ${notify_cmd} -u low "Opening Gallery in $BROWSER" && run_cmd --imgs & ;;
+		*)		   echo "No URI" ;;
+	esac
+done
