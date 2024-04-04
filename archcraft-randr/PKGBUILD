@@ -2,23 +2,24 @@
 
 pkgname=archcraft-randr
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Rofi frontend (with xrandr backend) to manage monitors"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-packages"
 license=('GPL3')
+depends=('archcraft-scripts')
 options=(!strip !emptydirs)
 
-source=(archcraft-arandr.desktop
-		archcraft-randr
+source=(archcraft-randr
+		archcraft-randr.desktop
 		archcraft-randr.rasi)
 
-sha256sums=('7ca8b423ebb9b4bdc466f525990b6b712eea0147e7e9930fccee977c004fe1e8'
-            'daf6a8ab4059c4ed6b56c3e257bed76c66395003f22a43674198b66ae2290971'
-            '8c14d6dcecf946fb77b8efaca647f6807b61c7bdc7272ad0e1b610fa5f91c02b')
+sha256sums=('cf70f2057a59b95c387e805acd4e29246d6992fcdba18c0f40be09394ab73a6f'
+            '7ca8b423ebb9b4bdc466f525990b6b712eea0147e7e9930fccee977c004fe1e8'
+            '7f629b32ba784f5105ee8a9b7edd6817da08ce7797e77f261be8fa5f7ea7feb1')
 
 package() {
 	install -Dm 755 archcraft-randr   			"$pkgdir"/usr/bin/archcraft-randr
-	install -Dm 644 archcraft-arandr.desktop	"$pkgdir"/usr/share/applications/archcraft-arandr.desktop
+	install -Dm 644 archcraft-randr.desktop		"$pkgdir"/usr/share/applications/archcraft-randr.desktop
 	install -Dm 644 archcraft-randr.rasi   		"$pkgdir"/usr/share/archcraft/randr/rofi/archcraft-randr.rasi
 }

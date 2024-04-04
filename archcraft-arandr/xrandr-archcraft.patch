@@ -1,0 +1,30 @@
+--- arandr-0.1.11/screenlayout/xrandr.py		2024-04-04 11:03:52.000000000 +0530
++++ arandr-0.1.11/screenlayout/xrandr_new.py	2024-04-04 11:02:49.822270224 +0530
+@@ -27,7 +27,7 @@
+ )
+ from .i18n import _
+ 
+-SHELLSHEBANG = '#!/bin/sh'
++SHELLSHEBANG = '#!/bin/bash'
+ 
+ 
+ class Feature:
+@@ -35,7 +35,7 @@
+ 
+ 
+ class XRandR:
+-    DEFAULTTEMPLATE = [SHELLSHEBANG, '%(xrandr)s']
++    DEFAULTTEMPLATE = [SHELLSHEBANG, '%(xrandr)s', 'archcraft-reload-theme']
+ 
+     configuration = None
+     state = None
+@@ -296,6 +296,9 @@
+         self.check_configuration()
+         self._run(*self.configuration.commandlineargs())
+ 
++        # Run the external 'archcraft-reload-theme' bash script after executing xrandr
++        subprocess.run(["archcraft-reload-theme"])
++
+     def check_configuration(self):
+         vmax = self.state.virtual.max
+ 

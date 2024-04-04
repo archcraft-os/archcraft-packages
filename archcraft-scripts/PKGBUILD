@@ -1,0 +1,20 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=archcraft-scripts
+pkgver=1.0
+pkgrel=0
+pkgdesc="Scripts needed for Archcraft"
+arch=('any')
+url="https://github.com/archcraft-os/archcraft-packages"
+license=('GPL3')
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. "$srcdir"
+}
+
+package() {
+	install -Dm 755 archcraft-reload-theme   "$pkgdir"/usr/bin/archcraft-reload-theme
+	install -Dm 755 archcraft-tcma           "$pkgdir"/usr/bin/archcraft-tcma
+	# more will be added in future
+}
