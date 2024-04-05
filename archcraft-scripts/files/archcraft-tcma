@@ -93,7 +93,7 @@ open_asroot() {
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'newm' ]]; then
 			"$newm_dir"/scripts/asroot "$@"
 		else
-			${notify_cmd} -u critical "Feature not available!"
+			${notify_cmd} -u critical "Open as Root feature is not available!"
 		fi
 	else
 		if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
@@ -123,7 +123,7 @@ open_asroot() {
 		elif [[ "$DESKTOP_SESSION" == 'xmonad' ]]; then
 			"$xmonad_dir"/scripts/xmonad_asroot "$@"
 		else
-			"$openbox_dir"/scripts/ob-asroot "$@"
+			${notify_cmd} -u critical "Open as Root feature is not available!"
 		fi
 	fi
 }
@@ -144,7 +144,8 @@ set_wallpaper() {
 			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$hypr_dir"/scripts/wallpaper
 			bash "$hypr_dir"/scripts/wallpaper &
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'newm' ]]; then
-			${notify_cmd} -u critical "Feature not available in NEWM"
+			swaybg --output '*' --mode fill --image "$@" &
+			${notify_cmd} -u normal "Temporarily applying wallpaper..."
 		else
 			swaybg --output '*' --mode fill --image "$@" &
 			${notify_cmd} -u normal "Temporarily applying wallpaper..."
