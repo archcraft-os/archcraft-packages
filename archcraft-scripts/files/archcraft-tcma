@@ -208,6 +208,16 @@ set_wallpaper() {
 	fi
 }
 
+## Set lockscreen -----------------------------
+set_lockscreen() {
+	if [[ "$XDG_SESSION_TYPE" == 'wayland' ]]; then
+		${notify_cmd} -u critical "Not supported in Wayland!"
+	else
+		${notify_cmd} -u normal "Generating Images, Please wait..."
+		betterlockscreen -u "$@"
+	fi
+}
+
 ## Main ------------------------------
 if [[ "$1" == '--terminal' ]]; then
 	open_terminal
@@ -215,4 +225,6 @@ elif [[ "$1" == '--asroot' ]]; then
 	open_asroot "$2"
 elif [[ "$1" == '--wallpaper' ]]; then
 	set_wallpaper "$2"
+elif [[ "$1" == '--lockscreen' ]]; then
+	set_lockscreen "$2"
 fi
