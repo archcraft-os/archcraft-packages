@@ -2,7 +2,7 @@
 
 pkgname=archcraft-scripts
 pkgver=1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Scripts needed for Archcraft"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-packages"

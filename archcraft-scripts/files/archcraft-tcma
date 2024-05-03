@@ -12,11 +12,11 @@ i3_dir="$config_dir/i3"
 qtile_dir="$config_dir/qtile"
 herb_dir="$config_dir/herbstluftwm"
 berry_dir="$config_dir/berry"
+xmonad_dir="$config_dir/xmonad"
 bb_dir="$HOME/.blackbox"
 cwm_dir="$HOME/.cwm"
 ewm_dir="$HOME/.evilwm"
 fluxbox_dir="$HOME/.fluxbox"
-xmonad_dir="$HOME/.xmonad"
 _2bwm_dir='/usr/share/archcraft/2bwm'
 dwm_dir='/usr/share/archcraft/dwm'
 
@@ -199,8 +199,13 @@ set_wallpaper() {
 			sed -i -e "s|hsetroot.*|hsetroot -cover '$@'|g" "$herb_dir"/scripts/herb_autostart
 			hsetroot -cover "$@"
 		elif [[ "$DESKTOP_SESSION" == 'xmonad' ]]; then
-			sed -i -e "s|hsetroot -cover.*|hsetroot -cover '$@'|g" "$xmonad_dir"/scripts/xmonad_autostart
-			hsetroot -cover "$@"
+			if [[ `pacman -Q archcraft-xmonad-premium` ]]; then
+				sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$xmonad_dir"/themes/wallpaper.sh
+				bash "$xmonad_dir"/themes/wallpaper.sh
+			else
+				sed -i -e "s|hsetroot -cover.*|hsetroot -cover '$@'|g" "$xmonad_dir"/scripts/xmonad_autostart
+				hsetroot -cover "$@"
+			fi
 		else
 			hsetroot -cover "$@"
 			${notify_cmd} -u normal "Temporarily applying wallpaper..."

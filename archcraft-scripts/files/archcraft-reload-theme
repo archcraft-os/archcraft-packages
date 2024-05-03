@@ -12,11 +12,11 @@ i3_dir="$config_dir/i3"
 qtile_dir="$config_dir/qtile"
 herb_dir="$config_dir/herbstluftwm"
 berry_dir="$config_dir/berry"
+xmonad_dir="$config_dir/xmonad"
 bb_dir="$HOME/.blackbox"
 cwm_dir="$HOME/.cwm"
 ewm_dir="$HOME/.evilwm"
 fluxbox_dir="$HOME/.fluxbox"
-xmonad_dir="$HOME/.xmonad"
 _2bwm_dir='/usr/share/archcraft/2bwm'
 dwm_dir='/usr/share/archcraft/dwm'
 
@@ -80,8 +80,13 @@ reload_theme() {
 		"$herb_dir"/scripts/herb_bar
 		herbstclient detect_monitors
 	elif [[ "$DESKTOP_SESSION" == 'xmonad' ]]; then
-		set_wallpaper "$xmonad_dir"/theme/wallpaper
-		"$xmonad_dir"/scripts/xmonad_bar
+		if [[ `pacman -Q archcraft-xmonad-premium` ]]; then
+			"$xmonad_dir"/themes/wallpaper.sh
+			"$xmonad_dir"/themes/polybar.sh
+		else
+			set_wallpaper "$xmonad_dir"/theme/wallpaper
+			"$xmonad_dir"/theme/polybar.sh
+		fi
 	fi
 }
 
