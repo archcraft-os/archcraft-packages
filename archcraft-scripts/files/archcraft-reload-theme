@@ -73,6 +73,7 @@ reload_theme() {
 	elif [[ "$DESKTOP_SESSION" == 'fluxbox' ]]; then
 		set_wallpaper "$fluxbox_dir"/backgrounds/default.jpg
 		if [[ `pidof polybar` ]]; then
+			echo
 			#"$fluxbox_dir"/scripts/fbox_bar
 		fi
 	elif [[ "$DESKTOP_SESSION" == 'herbstluftwm' ]]; then
