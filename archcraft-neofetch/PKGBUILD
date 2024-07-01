@@ -2,7 +2,7 @@
 
 pkgname=archcraft-neofetch
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Neofetch for Archcraft"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-packages"
@@ -13,7 +13,7 @@ options=(!strip !emptydirs)
 source=('neofetch'
 		'config.conf')
 
-sha256sums=('f7e70e6f7ea0f6326f8c8705e98db82bb09e4615f1c5defe5cb365ad56646895'
+sha256sums=('7197fe4f2c08c583369fd932c0c75ae5e9ca03dd98b775f57274c06bf1eb23c5'
             'e076edd4a4e571eb431b8efc5ba5da513c8c354c700e6aecdae7a5142382defc')
 
 package() {

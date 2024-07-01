@@ -5,13 +5,13 @@
 pkgname=archcraft-arandr
 _pkgname=arandr
 pkgver=0.1.11
-pkgrel=2
+pkgrel=3
 pkgdesc="Provide a simple visual front end for XRandR 1.2, Modified for Archcraft"
 arch=('any')
 url="https://christian.amsuess.com/tools/arandr/"
 license=('GPL3')
 depends=('gtk3' 'python-cairo' 'python-gobject' 'xorg-xrandr' 'archcraft-scripts')
-makedepends=('python-docutils')
+makedepends=('python-docutils' 'python-setuptools')
 source=(https://christian.amsuess.com/tools/$_pkgname/files/${_pkgname}-$pkgver.tar.gz
         dont-compress-man-pages.patch
         xrandr-archcraft.patch)
