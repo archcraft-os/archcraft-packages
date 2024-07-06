@@ -45,6 +45,8 @@ function main() {
       position='--primary'
     fi
     xrandr_cmd+=" --output ${output} ${position} ${mode}"
+    position=''
+    mode=''
   done
 
   ${=xrandr_cmd}
