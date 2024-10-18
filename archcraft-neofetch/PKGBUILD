@@ -1,8 +1,8 @@
 # Maintainer: Aditya Shakya <adi1090x@gmail.com>
 
 pkgname=archcraft-neofetch
-pkgver=1.0
-pkgrel=4
+pkgver=2.0
+pkgrel=0
 pkgdesc="Neofetch for Archcraft"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-packages"
@@ -11,12 +11,18 @@ conflicts=('neofetch')
 options=(!strip !emptydirs)
 
 source=('neofetch'
-		'config.conf')
+		'config.conf'
+		'config_legacy.conf'
+		'config_new.conf')
 
-sha256sums=('7197fe4f2c08c583369fd932c0c75ae5e9ca03dd98b775f57274c06bf1eb23c5'
-            'e076edd4a4e571eb431b8efc5ba5da513c8c354c700e6aecdae7a5142382defc')
+sha256sums=('083ffb8f4e487439c250f6709e98062fc585a6d30c343862b2d23179efed594b'
+            '2abf55b14a9b8b681b190c8e0a78e09316ba93749d33068e16bf33aa847daf4e'
+            '6d3efaef36c4049de1c191a64508ba50ccead186c231cb3043d1c7c51b173a5c'
+            '2e7d70b511c818469f1c315fe657524a5769c4251238435eebb8d5a8293211c4')
 
 package() {
-	install -Dm 755 neofetch   		"$pkgdir"/usr/bin/neofetch
-	install -Dm 644 config.conf	    "$pkgdir"/etc/skel/.config/neofetch/config.conf
+	install -Dm 755 neofetch   		    "$pkgdir"/usr/bin/neofetch
+	install -Dm 644 config.conf	        "$pkgdir"/etc/skel/.config/neofetch/config.conf
+	install -Dm 644 config_legacy.conf	"$pkgdir"/etc/skel/.config/neofetch/config_legacy.conf
+	install -Dm 644 config_new.conf	    "$pkgdir"/etc/skel/.config/neofetch/config_new.conf
 }
