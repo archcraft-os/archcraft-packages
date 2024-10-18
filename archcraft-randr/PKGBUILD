@@ -2,7 +2,7 @@
 
 pkgname=archcraft-randr
 pkgver=1.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Rofi frontend (with xrandr backend) to manage monitors"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-packages"
@@ -16,7 +16,7 @@ source=(archcraft-randr
 
 sha256sums=('cf70f2057a59b95c387e805acd4e29246d6992fcdba18c0f40be09394ab73a6f'
             '7ca8b423ebb9b4bdc466f525990b6b712eea0147e7e9930fccee977c004fe1e8'
-            '7f629b32ba784f5105ee8a9b7edd6817da08ce7797e77f261be8fa5f7ea7feb1')
+            '2fb6fcc9cbbb6e45235b042c637487b83e5a5da7415d24dc7509ed9698a3912c')
 
 package() {
 	install -Dm 755 archcraft-randr   			"$pkgdir"/usr/bin/archcraft-randr
