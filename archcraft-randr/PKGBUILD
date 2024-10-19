@@ -14,7 +14,7 @@ source=(archcraft-randr
 		archcraft-randr.desktop
 		archcraft-randr.rasi)
 
-sha256sums=('cf70f2057a59b95c387e805acd4e29246d6992fcdba18c0f40be09394ab73a6f'
+sha256sums=('8cc2fd4ad0f0319eabbe09bc0edb38a6de3da3c07669f25146a8afec49154f22'
             '7ca8b423ebb9b4bdc466f525990b6b712eea0147e7e9930fccee977c004fe1e8'
             '2fb6fcc9cbbb6e45235b042c637487b83e5a5da7415d24dc7509ed9698a3912c')
 
