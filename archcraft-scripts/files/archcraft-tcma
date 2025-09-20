@@ -26,6 +26,7 @@ wayfire_dir="$config_dir/wayfire"
 river_dir="$config_dir/river"
 hypr_dir="$config_dir/hypr"
 newm_dir="$config_dir/newm"
+niri_dir="$config_dir/niri"
 
 # Notification
 notify_cmd="notify-send -i '/usr/share/archcraft/icons/dunst/desktop.png'"
@@ -43,6 +44,8 @@ open_terminal() {
 			"$hypr_dir"/scripts/alacritty
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'newm' ]]; then
 			"$newm_dir"/scripts/terminal
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]]; then
+			"$niri_dir"/scripts/alacritty
 		else
 			alacritty
 		fi
@@ -92,6 +95,8 @@ open_asroot() {
 			"$hypr_dir"/scripts/asroot "$@"
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'newm' ]]; then
 			"$newm_dir"/scripts/asroot "$@"
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]]; then
+			"$niri_dir"/scripts/asroot "$@"
 		else
 			${notify_cmd} -u critical "Open as Root feature is not available!"
 		fi
@@ -143,6 +148,9 @@ set_wallpaper() {
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'hyprland' || "$XDG_CURRENT_DESKTOP" == 'Hyprland' ]]; then
 			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$hypr_dir"/scripts/wallpaper
 			bash "$hypr_dir"/scripts/wallpaper &
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]]; then
+			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$niri_dir"/scripts/wallpaper
+			bash "$niri_dir"/scripts/wallpaper &
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'newm' ]]; then
 			swaybg --output '*' --mode fill --image "$@" &
 			${notify_cmd} -u normal "Temporarily applying wallpaper..."
