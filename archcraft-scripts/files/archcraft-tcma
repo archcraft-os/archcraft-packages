@@ -146,8 +146,9 @@ set_wallpaper() {
 			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$river_dir"/scripts/wallpaper
 			bash "$river_dir"/scripts/wallpaper &
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'hyprland' || "$XDG_CURRENT_DESKTOP" == 'Hyprland' ]]; then
-			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$hypr_dir"/scripts/wallpaper
-			bash "$hypr_dir"/scripts/wallpaper &
+				sed -i -e "s|\$wallpaper =.*|\$wallpaper = $@|g" "$hypr_dir"/hyprpaper.conf
+				hyprctl hyprpaper preload "$@"
+				hyprctl hyprpaper wallpaper ",$@"
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]]; then
 			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$niri_dir"/scripts/wallpaper
 			bash "$niri_dir"/scripts/wallpaper &
