@@ -5,13 +5,18 @@
 pkgname=archcraft-arandr
 _pkgname=arandr
 pkgver=0.1.11
-pkgrel=4
+pkgrel=6
 pkgdesc="Provide a simple visual front end for XRandR 1.2, Modified for Archcraft"
 arch=('any')
 url="https://christian.amsuess.com/tools/arandr/"
 license=('GPL3')
 depends=('gtk3' 'python-cairo' 'python-gobject' 'xorg-xrandr' 'archcraft-scripts')
-makedepends=('python-docutils' 'python-setuptools')
+makedepends=(
+  python-build
+  python-docutils
+  python-installer
+  python-setuptools
+)
 source=(https://christian.amsuess.com/tools/$_pkgname/files/${_pkgname}-$pkgver.tar.gz
         dont-compress-man-pages.patch
         xrandr-archcraft.patch)
@@ -22,6 +27,10 @@ conflicts=('arandr')
 
 prepare() {
   cd "$srcdir"/$_pkgname-$pkgver
+
+  # fix issues caused by distutils
+  sed -i '/class build_[a-z]*(NoOptionCommand):/a\    dry_run = 0' setup.py
+
   # Don't create gzip files with a build date in them which makes it unreproducible
   patch -Np1 -i ${srcdir}/dont-compress-man-pages.patch
 
@@ -29,7 +38,12 @@ prepare() {
   patch -Np1 -i ${srcdir}/xrandr-archcraft.patch
 }
 
+build() {
+  cd $_pkgname-$pkgver
+  python -m build --wheel --no-isolation
+}
+
 package() {
-  cd "$srcdir"/$_pkgname-$pkgver
-  python setup.py install --prefix=/usr --root="$pkgdir"
+  cd $_pkgname-$pkgver
+  python -m installer --destdir="$pkgdir" dist/*.whl
 }
