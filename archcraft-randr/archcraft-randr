@@ -49,11 +49,7 @@ function main() {
     mode=''
   done
 
-  ${=xrandr_cmd}
-
-  if [[ "${position[(w)1]}" == (--left-of|--right-of|--above|--below|--primary|--same-as|--off) ]]; then
-    archcraft-reload-theme
-  fi
+  ${=xrandr_cmd} && archcraft-reload-theme
 }
 
 ################################################################################
