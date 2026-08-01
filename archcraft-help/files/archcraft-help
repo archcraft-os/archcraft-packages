@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2026 Aditya Shakya <adi1090x@gmail.com>
+##
+## Help App Helper
+
+## Dir
+DIR='/usr/share/archcraft'
+
+notify_cmd() {
+	notify-send -u low \
+	-h string:x-dunst-stack-tag:sys_notify \
+	-i "$DIR/icons/dunst/hourglass.png" "$@"
+}
+
+case "${1:-}" in
+	--wiki)
+		notify_cmd "Opening Wiki in $BROWSER"
+		xdg-open https://wiki.archcraft.io/docs/intro &
+		;;
+	--blog)
+		notify_cmd "Opening Tutorials in $BROWSER"
+		xdg-open https://wiki.archcraft.io/blog &
+		;;
+	--gallery)
+		notify_cmd "Opening Gallery in $BROWSER"
+		xdg-open https://gallery.archcraft.io &
+		;;
+	*)
+		echo "Options:  --wiki  --blog  --gallery"
+		exit 1
+		;;
+esac

@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2026 Aditya Shakya <adi1090x@gmail.com>
+##
+## Welcome App Helper
+
+## Dir
+DIR='/usr/share/archcraft'
+
+notify_cmd() {
+	notify-send -u low \
+	-h string:x-dunst-stack-tag:sys_notify \
+	-i "$DIR/icons/dunst/hourglass.png" "$@"
+}
+
+case "${1:-}" in
+	--help)
+		"$DIR/help/run.py" &
+		;;
+	--calamares)
+		notify_cmd 'Launching Calamares...'
+		"/etc/calamares/launch.sh" & 
+		;;
+	--abif)
+		notify_cmd 'Launching ABIF...'
+		alacritty \
+			--class 'alacritty-float,alacritty-float' \
+			--config-file "/abif-master/alacritty.toml" \
+			--title 'Archcraft Installer (CLI)' \
+			-e sudo "/abif-master/abif" &
+		;;
+	*)
+		echo "Options:  --help  --calamares  --abif"
+		exit 1
+		;;
+esac

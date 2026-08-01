@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Welcome To Archcraft
+Comment=Startup application for Archcraft
+Exec=/usr/share/archcraft/welcome/run.py
+Icon=archcraft-yellow
+Type=Application
+Categories=System;

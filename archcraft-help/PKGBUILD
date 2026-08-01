@@ -1,0 +1,23 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=archcraft-help
+pkgver=3.0
+pkgrel=1
+pkgdesc="Help and Tips for Archcraft"
+arch=('any')
+url="https://github.com/archcraft-os/archcraft-packages"
+license=('GPL3')
+depends=('python' 'python-gobject' 'gtk4')
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. "$srcdir"
+}
+
+package() {
+	(find help -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/archcraft/{}" \;)
+	chmod +x "$pkgdir"/usr/share/archcraft/help/run.py
+
+	install -Dm 755 archcraft-help 			 "$pkgdir"/usr/bin/archcraft-help
+	install -Dm 644 archcraft-help.desktop	 "$pkgdir"/usr/share/applications/archcraft-help.desktop
+}

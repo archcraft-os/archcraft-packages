@@ -1,0 +1,29 @@
+window {
+    background: #383C4A;
+    color: #f5f5f5;
+}
+
+.page-title {
+    color: #f5f5f5;
+}
+
+.page-subtitle {
+    color: rgba(245,245,245,.75);
+}
+
+.flat-button {
+    background: #3D414F;
+    color: #f5f5f5;
+    border-color: #2B2E39;
+}
+
+.flat-button:hover {
+    color: #5294E2;
+    border-color: #5294E2;
+}
+
+.flat-button:active {
+    background: #5294E2;
+    color: #f5f5f5;
+    border-color: #5294E2;
+}
