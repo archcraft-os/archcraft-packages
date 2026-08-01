@@ -165,8 +165,8 @@ set_wallpaper() {
 				nitrogen --head="$head" --save --set-zoom-fill "$@" &>/dev/null
 			done
 		elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
-			sed -i -e "s|feh.*|feh --no-fehbg --bg-fill '$@'|g" "$HOME"/.fehbg
-			bash "$HOME"/.fehbg
+			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$bspwm_dir"/themes/wallpaper.sh
+			bash "$bspwm_dir"/themes/wallpaper.sh
 		elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
 			if [[ `pacman -Q archcraft-i3wm-premium` ]]; then
 				sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$i3_dir"/themes/wallpaper.sh
