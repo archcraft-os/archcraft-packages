@@ -1,0 +1,13 @@
+#!/bin/sh
+
+LIB="/usr/lib/libgtk-nocsd.so"
+DISABLE="$HOME/.config/archcraft/disable-gtk-nocsd"
+
+# Use server-side decorations for GTK applications in WM sessions.
+# Users can opt out by creating:
+#   ~/.config/archcraft/disable-gtk-nocsd
+if [ -f "$LIB" ] && [ ! -f "$DISABLE" ]; then
+    export LD_PRELOAD="${LD_PRELOAD:+${LD_PRELOAD}:}$LIB"
+fi
+
+exec "$@"
