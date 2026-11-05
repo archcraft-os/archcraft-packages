@@ -27,6 +27,8 @@ river_dir="$config_dir/river"
 hypr_dir="$config_dir/hypr"
 newm_dir="$config_dir/newm"
 niri_dir="$config_dir/niri"
+mango_dir="$config_dir/mango"
+labwc_dir="$config_dir/labwc"
 
 # Notification
 notify_cmd="notify-send -i '/usr/share/archcraft/icons/dunst/desktop.png'"
@@ -46,6 +48,10 @@ open_terminal() {
 			"$newm_dir"/scripts/terminal
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]]; then
 			"$niri_dir"/scripts/alacritty
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'Mango' ]]; then
+			"$mango_dir"/scripts/alacritty
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'labwc' || "$XDG_CURRENT_DESKTOP" == 'labwc:wlroots' ]]; then
+			"$labwc_dir"/scripts/term-alacritty
 		else
 			alacritty
 		fi
@@ -97,6 +103,10 @@ open_asroot() {
 			"$newm_dir"/scripts/asroot "$@"
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]]; then
 			"$niri_dir"/scripts/asroot "$@"
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'Mango' ]]; then
+			"$mango_dir"/scripts/asroot "$@"
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'labwc' || "$XDG_CURRENT_DESKTOP" == 'labwc:wlroots' ]]; then
+			"$labwc_dir"/scripts/ac-asroot $@
 		else
 			${notify_cmd} -u critical "Open as Root feature is not available!"
 		fi
@@ -151,6 +161,12 @@ set_wallpaper() {
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]]; then
 			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$niri_dir"/scripts/wallpaper
 			bash "$niri_dir"/scripts/wallpaper &
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'Mango' ]]; then
+			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$mango_dir"/scripts/wallpaper
+			bash "$mango_dir"/scripts/wallpaper &
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'labwc' || "$XDG_CURRENT_DESKTOP" == 'labwc:wlroots' ]]; then
+			sed -i -e "s|WALLPAPER=.*|WALLPAPER='$@'|g" "$labwc_dir"/scripts/ac-wallpaper
+			"$labwc_dir"/scripts/ac-wallpaper &
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'newm' ]]; then
 			swaybg --output '*' --mode fill --image "$@" &
 			${notify_cmd} -u normal "Temporarily applying wallpaper..."
