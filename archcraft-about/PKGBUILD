@@ -13,7 +13,7 @@ options=(!strip !emptydirs)
 source=(archcraft-about
 		archcraft-about.desktop)
 
-sha256sums=('174928a942e34dd7a7beaaee2d6a6ac0105331d38bea7110e01db229fc9fad03'
+sha256sums=('0fa329545c6945e32217a342f935bd3fec9595647ff16f9d59c9040ea9938c88'
             'eec6a06011fc695076b61a9e59a5f9af52d954d49d663c1df2282c6329c956ff')
 
 package() {
