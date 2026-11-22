@@ -1,24 +1,33 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2025 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2026 Aditya Shakya <adi1090x@gmail.com>
 ##
-## About Archcraft
+## Show the Archcraft About dialog. Display the ISO version as vMAJOR.MINOR
+## when available, or show "rolling" on installations without an ISO version.
 
-## Get ISO Version
-if [[ -e '/version' ]]; then
-	version="v`cat /version | cut -d'.' -f1`.`cat /version | cut -d '.' -f2`"
-else
-	version='rolling'
+author='Aditya Shakya <adi1090x@gmail.com>'
+website='https://archcraft.io'
+version='rolling'
+
+# Read the version once. The third variable absorbs any patch or build fields.
+if [[ -r /version ]]; then
+	IFS=. read -r major minor remainder < /version
+
+	# Use the parsed fields even if the file has no trailing newline.
+	if [[ -n $major && -n $minor ]]; then
+		version="v${major}.${minor}"
+	fi
 fi
 
-yad --title='About Archcraft' --window-icon='archcraft-cyan' \
-	--about \
+exec yad --about \
+	--title='About Archcraft' \
+	--window-icon='archcraft-cyan' \
 	--pname='Archcraft' \
 	--pversion="$version" \
 	--image='distributor-logo-archcraft' \
-	--comments="Yet another minimal linux distribution, Based on Arch Linux." \
-	--copyright="Copyright 2020-`date +'%Y'`, Aditya Shakya <adi1090x@gmail.com>" \
+	--comments='A thoughtfully crafted Linux desktop experience, based on Arch Linux.' \
+	--copyright="Copyright 2020-$(date +%Y), $author" \
 	--license='GPL3' \
-	--website='https://archcraft.io' \
-	--website-label='archcraft.io' \
-	--authors="Aditya Shakya <adi1090x@gmail.com>"
+	--website="$website" \
+	--website-label="${website#https://}" \
+	--authors="$author"
